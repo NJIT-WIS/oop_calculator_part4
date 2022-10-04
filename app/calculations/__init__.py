@@ -4,10 +4,8 @@ from app.operations import *
 
 class Calculation:
     """My abstract Base Calculation Class"""
+
     # Class Properties should get Getter and Setter
-    result = 0
-    val1 = 0
-    val2 = 0
 
     @classmethod
     def create(cls, val1, val2):
@@ -39,39 +37,30 @@ class Calculation:
         """Get the result of a calculation"""
         return self.val2
 
-    def get_result(self):
-        """Get the result of a calculation"""
-        return self.result
-
 
 class Addition(Calculation):
     """My Addition Concrete Calculation Class"""
 
-    def __init__(self, val1, val2):
-        """concrete class constructor calls the """
-        super().__init__(val1, val2)
-        self.set_result(addition(self.val1, self.val2))
+    def get_result(self):
+        return addition(self.val1, self.val2)
 
 
 class Subtraction(Calculation):
     """My Subtraction Concrete Calculation Class"""
 
-    def __init__(self, val1, val2):
-        super().__init__(val1, val2)
-        self.set_result(subtraction(self.val1, self.val2))
+    def get_result(self):
+        return subtraction(self.val1, self.val2)
 
 
 class Division(Calculation):
     """My Division Concrete Calculation Class"""
 
-    def __init__(self, val1, val2):
-        super().__init__(val1, val2)
-        self.set_result(division(self.val1, self.val2))
+    def get_result(self):
+        return division(self.val1, self.val2)
 
 
 class Multiplication(Calculation):
     """My Multiplication Concrete Calculation Class"""
 
-    def __init__(self, val1, val2):
-        super().__init__(val1, val2)
-        self.set_result(multiplication(self.val1, self.val2))
+    def get_result(self):
+        return multiplication(self.val1, self.val2)
