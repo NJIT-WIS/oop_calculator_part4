@@ -48,5 +48,4 @@ def test_division_calculation():
     assert division_instance_1.get_result() == 1, "Multiplication is not working"
     assert division_instance_2.get_result() == 1.5, "Multiplication is not working"
     with pytest.raises(ZeroDivisionError):
-        division_instance_3 = Division.create(3, 0).get_result(), "Fails Divide By Zero"
-        del division_instance_3
+        Division.create(3, 0).get_result(), "Fails Divide By Zero"
