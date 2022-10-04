@@ -1,57 +1,38 @@
-# OOP Calculator Part 2 - Work in Progress (WIP)
+# OOP Calculator Part 3 - Working with Lists and other Data Structures
 
 ## Introduction
 
-The purpose of this assignment is to introduce you to the implementation of encapsulation, inheritance, polymorphism,
-and abstraction. You will learn how to implement static, class, and instance methods as well as be introduced to your
-first OOP design pattern that is called the "factory pattern."
+
 
 ### Assignment Requirements
 
-1. Create a calculation abstract class
-2. Add a create factory method that returns a class instance on the calculation class
-3. Add a get result method on the calculation class that returns the result property
-4. Add a set result method on the calculation class that sets the result property
-5. Add get/set methods for val1 and val2 respectively
-6. Add a constructor to the calculator class to set val1 and val2 properties
-7. Create addition, subtraction, division and multiplication concrete classes that extend the calculator class
-8. Add a class constructor to each operation class above that calls the parent constructor with "super" keyword and then
-   set the result using the associated operation function i.e. set result using the addition function
-9. Write a test using the isInstance function to verify each instance type i.e. one test for each operation
-10. Refactor your code so that each class is in its own file in the app folder
-11. Make sure all functions are tested.
 
-Instructor Video - Part 1 [Watch Here](https://youtu.be/hXqD_jbfCwQ)
+
+Instructor Video - Part 1 [Watch Here](https://youtu.be/7jgo4yhZ1gk)
 Instructor Video - Part 2 - To Be Announced
 
 ### Module Readings:
 
-1. Is
-   Instance https://pynative.com/python-isinstance-explained-with-examples/#h-how-to-use-isinstance-function-in-python
-2. Class Method Factor - https://dev.to/danyson/how-classmethod-in-python-helps-in-implementing-factory-methods-23gl
+1. https://www.geeksforgeeks.org/python-data-structures/
+2. https://docs.python.org/3/tutorial/datastructures.html
+
 
 ## Vocabulary
 
-1. Class - Schematic for an object or a organizational tool like a folder to organize methods and properties into
-   logical groups like a directory.  Classes are the blueprints / design of your program
-2. Instance - Copy of a class with its own data
-3. Class Member - The methods and properties of a class
-4. Property - Data i.e. variable that describes the class
-5. Method - Actions of the class
-6. Abstract Class - Generic representation of a class type i.e. pet
-7. Concrete Class - Specific representation of a class type i.e Dog, Cat, etc...
-8. Factory Method - Generic method that returns an instance of a class
-9. Constructor Method - The first method automatically called when a class is instantiated into an object / instance
-10. Namespace - Equivalent to the files and folders that are used to logically organize a programs code
-11. Static Method / Property - Used to namespace properties and methods that don't need to operate on the class or an
-    instance of a class
-12. Class Method - Used to operate on class data that is not a copy / instance uses the cls keyword
-13. Instance Method - used to operate on the properties and methods of a class instance i.e. copy uses the self keyword
-14. Override - When a child's class member replaces a parents member
+1. List
+2. Dictionary
+3. Mutable
+4. Immutable
+5. Sorted
+6. Unsorted
+7. Index
+8. Element
+9. Key
+10. Value
 
 ### Prerequisite Knowledge
 
-Note: Previously completed on static methods
+Note: Previously completed on instances
 
 ## Steps to Complete the Assignment
 

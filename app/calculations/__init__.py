@@ -37,6 +37,12 @@ class Calculation:
         """Get the result of a calculation"""
         return self.val2
 
+    def __repr__(self):
+        return f'Operation: { type(self)}, (val1={self.val1}, val2={self.val2}, result={self.get_result()})'
+
+    def get_result(self):
+        pass
+
 
 class Addition(Calculation):
     """My Addition Concrete Calculation Class"""

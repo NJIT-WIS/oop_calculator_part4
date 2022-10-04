@@ -1,4 +1,6 @@
 """This is the calculation class """
+from pprint import pprint
+
 import pytest
 
 from app.calculations import Addition, Subtraction, Multiplication, Division
@@ -8,6 +10,7 @@ def test_addition_calculation():
     """Add Two Numbers"""
     # notice that each instance is independent of each other
     addition_instance_1 = Addition.create(2, 2)
+    pprint(addition_instance_1)
     addition_instance_2 = Addition.create(3, 3)
     assert isinstance(addition_instance_1, Addition), "Is not a Addition Instance"
     assert isinstance(addition_instance_2, Addition), "Is not a Addition Instance"
