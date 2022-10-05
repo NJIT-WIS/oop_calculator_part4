@@ -2,6 +2,7 @@
 from pprint import pprint
 
 from app.calculations import Addition, Multiplication
+from app.history import History
 
 
 def test_history_operations():
@@ -10,11 +11,12 @@ def test_history_operations():
     assert isinstance(addition_instance, Addition), "Not an addition Instance"
     assert addition_instance.get_result() == 3, "Did not add 1 + 2 = 3"
     # Initializing a list
-    history = [addition_instance]
+    addition_instance_1 = Addition(1, 2)
+    history = History(addition_instance, addition_instance_1)
     # Checking that the first element of the array is an addition instance
     assert isinstance(history[0], Addition)
     # Check how many items are in the list
-    assert len(history) == 1, "Did not have 1 element in the list"
+    assert len(history) == 2, "Did not have 1 element in the list"
     # Removes all the elements in the list
     history.clear()
     assert len(history) == 0, "Did not clear"
@@ -37,10 +39,3 @@ def test_history_operations():
     assert len(history) == 3
     assert history[-1].get_result() == 8
     pprint(history)
-
-
-
-
-
-
-

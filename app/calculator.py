@@ -1,13 +1,17 @@
 """Calculator Class"""
 from app.calculations import *
+from app.history import History
 
 
 class Calculator:
-    """Improved Calculator with Static Methods and using the calculation instance"""
+    """Improved Calculator with Class Methods and using the calculation history static prop instance"""
+    # this is  a static history property holding our history list class
+    history = History()
 
-    @staticmethod
-    def add(val1, val2):
-        return Addition.create(val1, val2).get_result()
+    @classmethod
+    def add(cls, val1, val2):
+        cls.history.append(Addition.create(val1, val2))
+        return cls.history.get_last_result()
 
     @staticmethod
     def divide(val1, val2):

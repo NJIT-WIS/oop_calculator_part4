@@ -1,7 +1,8 @@
-# OOP Calculator Part 3 - Working with Lists and other Data Structures
+# OOP Calculator Part 3 - Working with Lists Your First Data Structure
 
 ## Introduction
 
+In this unit you will learn about lists and how to work with them.  Lists are important to understand because they will be used to store such a list of calculations in a history class.
 
 
 ### Assignment Requirements
@@ -13,8 +14,9 @@ Instructor Video - Part 2 - To Be Announced
 
 ### Module Readings:
 
-1. https://www.geeksforgeeks.org/python-data-structures/
-2. https://docs.python.org/3/tutorial/datastructures.html
+1. https://www.w3schools.com/python/python_lists.asp
+2. https://www.geeksforgeeks.org/python-data-structures/
+3. https://docs.python.org/3/tutorial/datastructures.html
 
 
 ## Vocabulary
