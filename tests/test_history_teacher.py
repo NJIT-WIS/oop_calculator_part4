@@ -38,4 +38,4 @@ def test_history_operations():
     history[-1].set_val2(4)
     assert len(history) == 3
     assert history[-1].get_result() == 8
-    pprint(history)
+    history.print_history()

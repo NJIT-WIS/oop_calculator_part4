@@ -1,4 +1,5 @@
-"""History class that extends the built in list data structure type"""
+"""History class that extends the built-in list data structure type"""
+from app.calculations import Calculation
 
 
 class History(list):
@@ -10,3 +11,8 @@ class History(list):
 
     def get_last_result(self):
         return self[-1].get_result()
+
+    def print_history(self):
+        for calculation in self:
+            print(calculation)
+
