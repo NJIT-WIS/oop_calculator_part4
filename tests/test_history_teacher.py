@@ -2,7 +2,7 @@
 from pprint import pprint
 
 from app.calculations import Addition, Multiplication
-from app.history import History
+from app.history import CalculationHistoryList as History
 
 
 def test_history_operations():
@@ -33,9 +33,6 @@ def test_history_operations():
     retrieve_instance = history.pop(-1)
     assert isinstance(retrieve_instance, Addition)
     assert len(history) == 2
-    multiplication_instance1 = Multiplication(2, 2)
+    multiplication_instance1 = Multiplication(2, 8)
     history.append(multiplication_instance1)
-    history[-1].set_val2(4)
-    assert len(history) == 3
-    assert history[-1].get_result() == 8
     history.print_history()

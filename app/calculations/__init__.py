@@ -1,44 +1,26 @@
 """Calculation abstract class and concrete operations"""
+from pprint import pprint
+
 from app.operations import *
 
 
-class Calculation:
+class Calculation(list):
     """My abstract Base Calculation Class"""
 
     # Class Properties should get Getter and Setter
 
     @classmethod
-    def create(cls, val1, val2):
+    def create(cls, *argv):
         """Factory Method"""
-        return cls(val1, val2)
+        return cls(*argv)
 
-    def __init__(self, val1, val2):
+    def __init__(self, *argv):
         """This is the base class constructor"""
-        self.val1 = val1
-        self.val2 = val2
-
-    def set_result(self, result):
-        """Get the result of a calculation"""
-        self.result = result
-
-    def set_val1(self, val1):
-        """Get the result of a calculation"""
-        self.val1 = val1
-
-    def set_val2(self, val2):
-        """Get the result of a calculation"""
-        self.val2 = val2
-
-    def get_val1(self):
-        """Get the result of a calculation"""
-        return self.val1
-
-    def get_val2(self):
-        """Get the result of a calculation"""
-        return self.val2
+        super().__init__(argv)
 
     def __repr__(self):
-        return f'Operation: { type(self)}, (val1={self.val1}, val2={self.val2}, result={self.get_result()})'
+        values = ', '.join(str(x) for x in self)
+        return f'Calculation Type: {type(self)}, values: {values}, result={self.get_result()})'
 
     def get_result(self):
         pass
@@ -48,25 +30,43 @@ class Addition(Calculation):
     """My Addition Concrete Calculation Class"""
 
     def get_result(self):
-        return addition(self.val1, self.val2)
+        sum_of_values = 0.0
+        for val in self:
+            sum_of_values = addition(sum_of_values, val)
+        return sum_of_values
 
 
 class Subtraction(Calculation):
     """My Subtraction Concrete Calculation Class"""
 
     def get_result(self):
-        return subtraction(self.val1, self.val2)
+        difference_of_values = self[0]
+        list_iterator = iter(self)
+        next(list_iterator)
+        for val in list_iterator:
+            difference_of_values = subtraction(difference_of_values, val)
+        return difference_of_values
 
 
 class Division(Calculation):
     """My Division Concrete Calculation Class"""
 
     def get_result(self):
-        return division(self.val1, self.val2)
+        quotient_of_values = self[0]
+        list_iterator = iter(self)
+        next(list_iterator)
+        for val in list_iterator:
+            quotient_of_values = division(quotient_of_values, val)
+        return quotient_of_values
 
 
 class Multiplication(Calculation):
     """My Multiplication Concrete Calculation Class"""
 
     def get_result(self):
-        return multiplication(self.val1, self.val2)
+        product_of_values = self[0]
+        list_iterator = iter(self)
+        next(list_iterator)
+        for val in list_iterator:
+            product_of_values = multiplication(product_of_values, val)
+        return product_of_values
