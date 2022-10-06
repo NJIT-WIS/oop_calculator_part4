@@ -7,16 +7,21 @@ from app.operations import *
 class Calculation(list):
     """My abstract Base Calculation Class"""
 
-    # Class Properties should get Getter and Setter
-
     @classmethod
     def create(cls, *argv):
         """Factory Method"""
-        return cls(*argv)
+        return cls(argv)
 
     def __init__(self, *argv):
         """This is the base class constructor"""
-        super().__init__(argv)
+        super().__init__()
+        if type(argv[0][0]) is not tuple:
+            for value in argv[0]:
+                self.append(value)
+        else:
+            for value in argv[0][0]:
+                self.append(value)
+            pprint(argv)
 
     def __repr__(self):
         values = ', '.join(str(x) for x in self)
