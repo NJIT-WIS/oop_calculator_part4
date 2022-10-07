@@ -21,7 +21,6 @@ class Calculation(list):
         else:
             for value in argv[0][0]:
                 self.append(value)
-            pprint(argv)
 
     def __repr__(self):
         values = ', '.join(str(x) for x in self)
