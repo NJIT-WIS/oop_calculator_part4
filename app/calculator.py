@@ -9,17 +9,17 @@ class Calculator:
     history = History()
 
     @classmethod
-    def add(cls, *args):
-        return cls.history.append(Addition.create(args))
+    def add(cls, my_values: tuple):
+        return cls.history.append(Addition.create(my_values))
 
     @classmethod
-    def divide(cls, *args):
-        return cls.history.append(Division.create(args))
+    def divide(cls, my_values: tuple):
+        return cls.history.append(Division.create(my_values))
 
     @classmethod
-    def multiply(cls, *args):
-        return cls.history.append(Multiplication.create(args))
+    def multiply(cls, my_values: tuple):
+        return cls.history.append(Multiplication.create(my_values))
 
     @classmethod
-    def subtract(cls, *args):
-        return cls.history.append(Subtraction.create(args))
+    def subtract(cls, my_values: tuple):
+        return cls.history.append(Subtraction.create(my_values))
