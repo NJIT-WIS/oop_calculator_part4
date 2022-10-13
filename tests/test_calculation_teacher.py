@@ -5,6 +5,7 @@ import pytest
 
 from app.calculations import Addition, Subtraction, Multiplication, Division
 from app.conversions import Convert
+from app.exceptions import OnlyOneValue
 
 
 def test_addition_calculation():
@@ -22,8 +23,8 @@ def test_addition_calculation():
 def test_subtraction_calculation():
     """Subtract Two Numbers"""
     # notice that each instance is independent of each other
-    subtraction_instance_1 = Subtraction.create(2, 2)
-    subtraction_instance_2 = Subtraction.create(3, 2)
+    subtraction_instance_1 = Subtraction.create((2, 2))
+    subtraction_instance_2 = Subtraction.create((3, 2))
     assert isinstance(subtraction_instance_1, Subtraction), "Not a Subtraction Instance"
     assert isinstance(subtraction_instance_2, Subtraction), "Not a Subtraction Instance"
     assert subtraction_instance_1.get_result() == 0, "Subtraction is not working"
@@ -33,8 +34,8 @@ def test_subtraction_calculation():
 def test_multiplication_calculation():
     """Multiply Two Numbers"""
     # notice that each instance is independent of each other
-    multiplication_instance_1 = Multiplication.create(2, 2)
-    multiplication_instance_2 = Multiplication.create(3, 2)
+    multiplication_instance_1 = Multiplication.create((2, 2))
+    multiplication_instance_2 = Multiplication.create((3, 2))
     assert isinstance(multiplication_instance_1, Multiplication), "Not a Multiplication Instance"
     assert isinstance(multiplication_instance_2, Multiplication), "Not a Multiplication Instance"
     assert multiplication_instance_1.get_result() == 4, "Multiplication is not working"
@@ -44,12 +45,20 @@ def test_multiplication_calculation():
 def test_division_calculation():
     """Divide Two Numbers"""
     # notice that each instance is independent of each other
-    division_instance_1 = Division.create(2, 2)
-    division_instance_2 = Division.create(3, 2)
+    my_tuple = (2, 2)
+    division_instance_1 = Division.create(my_tuple)
+    my_tuple = (3, 2)
+    division_instance_2 = Division.create(my_tuple)
 
     assert isinstance(division_instance_1, Division), "Not a Multiplication Instance"
     assert isinstance(division_instance_1, Division), "Not a Multiplication Instance"
     assert division_instance_1.get_result() == 1, "Multiplication is not working"
     assert division_instance_2.get_result() == 1.5, "Multiplication is not working"
     with pytest.raises(ZeroDivisionError):
-        Division.create(3, 0).get_result(), "Fails Divide By Zero"
+        Division.create((3, 0)).get_result(), "Fails Divide By Zero"
+
+
+def test_only_one_value_exception():
+    my_tuple = (1)
+    with pytest.raises(OnlyOneValue):
+        Subtraction.create(my_tuple).get_result() == 2

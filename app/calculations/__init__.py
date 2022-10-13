@@ -1,6 +1,5 @@
 """Calculation abstract class and concrete operations"""
-from pprint import pprint
-
+from app.exceptions import OnlyOneValue
 from app.operations import *
 
 
@@ -14,9 +13,13 @@ class Calculation(list):
 
     def __init__(self, my_values: tuple):
         """This is the base class constructor"""
+
         super().__init__()
-        for value in my_values:
-            self.append(value)
+        try:
+            for value in my_values:
+                self.append(value)
+        except TypeError:
+            self.append(my_values)
 
     def __repr__(self):
         values = ', '.join(str(x) for x in self)
@@ -40,6 +43,8 @@ class Subtraction(Calculation):
     """My Subtraction Concrete Calculation Class"""
 
     def get_result(self):
+        if len(self) == 1:
+            raise OnlyOneValue
         difference_of_values = self[0]
         list_iterator = iter(self)
         next(list_iterator)
@@ -52,8 +57,11 @@ class Division(Calculation):
     """My Division Concrete Calculation Class"""
 
     def get_result(self):
+        # you have to get the first value
         quotient_of_values = self[0]
+        # You have to convert the list to an iterator
         list_iterator = iter(self)
+        # skip the next value so that the loop doesn't perform the calculation of the first value with itself
         next(list_iterator)
         for val in list_iterator:
             quotient_of_values = division(quotient_of_values, val)
