@@ -8,19 +8,15 @@ class Calculation(list):
     """My abstract Base Calculation Class"""
 
     @classmethod
-    def create(cls, *argv):
+    def create(cls, my_values: tuple):
         """Factory Method"""
-        return cls(argv)
+        return cls(my_values)
 
-    def __init__(self, *argv):
+    def __init__(self, my_values: tuple):
         """This is the base class constructor"""
         super().__init__()
-        if type(argv[0][0]) is not tuple:
-            for value in argv[0]:
-                self.append(value)
-        else:
-            for value in argv[0][0]:
-                self.append(value)
+        for value in my_values:
+            self.append(value)
 
     def __repr__(self):
         values = ', '.join(str(x) for x in self)
