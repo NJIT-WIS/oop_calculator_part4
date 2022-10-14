@@ -1,36 +1,37 @@
-# OOP Calculator Part 3 - Working with Lists Your First Data Structure
+# OOP Calculator Part 4 - Exception Handling and more list functionality
 
 ## Introduction
 
-In this unit you will learn about lists and how to work with them.  Lists are important to understand because they will be used to store such a list of calculations in a history class.
-
+In this unitm you will learn about exceptions, working with list data, and iterators. You need to make your program
+accept a tuple for the calculation class constructor or a single value. You need to make two new calculation type for
+square and another one for square root. You need to add a custom exception that gets raised if only one value is found
+for calculations that require at least 2 values and you must implement a try except in the calculation constructor to
+handle properly if a tuple or a single value is passed into the create factory method.
 
 ### Assignment Requirements
 
-
-
-Instructor Video - Part 1 [Watch Here](https://youtu.be/7jgo4yhZ1gk)
+Instructor Video - Part 1 [Watch Here](https://youtu.be/W3vSEZ9IT8E)
 Instructor Video - Part 2 - To Be Announced
 
 ### Module Readings:
 
-1. https://www.w3schools.com/python/python_lists.asp
-2. https://www.geeksforgeeks.org/python-data-structures/
-3. https://docs.python.org/3/tutorial/datastructures.html
+1. [Iterators and loops Explained with Examples](https://anandology.com/python-practice-book/iterators.html)
+2. [Exceptions Try Except Basic](https://pythonbasics.org/try-except/)
+3. [Custom Exceptions](https://www.programiz.com/python-programming/user-defined-exception)
 
 
 ## Vocabulary
 
-1. List
-2. Dictionary
-3. Mutable
-4. Immutable
-5. Sorted
-6. Unsorted
-7. Index
-8. Element
-9. Key
-10. Value
+1. Iterator
+2. Exception
+3. Try Except
+4. Custom Exceptions
+
+## Example Code
+1. [Calculations](calculations.png)
+2. [Calculation Types](calculation_types.png)
+3. [Arg Convert](convert.png)
+4. [Custom Exception](custom_exception.png)
 
 ### Prerequisite Knowledge
 

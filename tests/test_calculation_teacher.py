@@ -3,7 +3,7 @@ from pprint import pprint
 
 import pytest
 
-from app.calculations import Addition, Subtraction, Multiplication, Division
+from app.calculations import Addition, Subtraction, Multiplication, Division, Square, SquareRoot
 from app.conversions import Convert
 from app.exceptions import OnlyOneValue
 
@@ -57,6 +57,22 @@ def test_division_calculation():
     assert division_instance_2.get_result() == 1.5, "Multiplication is not working"
     with pytest.raises(ZeroDivisionError):
         Division.create((3, 0)).get_result(), "Fails Divide By Zero"
+
+
+def test_square_calculation():
+    """Divide Two Numbers"""
+    # notice that each instance is independent of each other
+    my_float = 2.0
+    division_instance_1 = Square.create(my_float)
+    assert division_instance_1.get_result() == 4
+
+
+def test_square_root_calculation():
+    """Divide Two Numbers"""
+    # notice that each instance is independent of each other
+    my_float = 4.0
+    division_instance_1 = SquareRoot.create(my_float)
+    assert division_instance_1.get_result() == 2
 
 
 def test_only_one_value_exception():

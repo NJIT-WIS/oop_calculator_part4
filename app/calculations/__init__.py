@@ -1,4 +1,6 @@
 """Calculation abstract class and concrete operations"""
+import math
+
 from app.exceptions import OnlyOneValue
 from app.operations import *
 
@@ -37,6 +39,20 @@ class Addition(Calculation):
         for val in self:
             sum_of_values = addition(sum_of_values, val)
         return sum_of_values
+
+
+class Square(Calculation):
+    """My square Concrete Calculation Class"""
+
+    def get_result(self):
+        return pow(self[0], 2)
+
+
+class SquareRoot(Calculation):
+    """My square root Concrete Calculation Class"""
+
+    def get_result(self):
+        return math.sqrt(self[0])
 
 
 class Subtraction(Calculation):
