@@ -63,19 +63,25 @@ def test_square_calculation():
     """Divide Two Numbers"""
     # notice that each instance is independent of each other
     my_float = 2.0
-    division_instance_1 = Square.create(my_float)
-    assert division_instance_1.get_result() == 4
+    square_instance_1 = Square.create(my_float)
+    assert square_instance_1.get_result() == 4
 
 
 def test_square_root_calculation():
     """Divide Two Numbers"""
     # notice that each instance is independent of each other
     my_float = 4.0
-    division_instance_1 = SquareRoot.create(my_float)
-    assert division_instance_1.get_result() == 2
+    square_root_instance_1 = SquareRoot.create(my_float)
+    assert square_root_instance_1.get_result() == 2
 
 
 def test_only_one_value_exception():
-    my_tuple = (1)
+    my_value = 1
     with pytest.raises(OnlyOneValue):
-        Subtraction.create(my_tuple).get_result() == 2
+        Subtraction.create(my_value).get_result() == 2
+        Multiplication.create(my_value).get_result() == 2
+        Division.create(my_value).get_result() == 2
+        Subtraction.create(my_value).get_result() == 2
+
+
+
