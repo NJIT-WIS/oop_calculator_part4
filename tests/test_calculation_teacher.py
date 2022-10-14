@@ -12,6 +12,7 @@ def test_addition_calculation():
     """Add Two Numbers"""
     # notice that each instance is independent of each other
     my_values = Convert.args_to_tuple(2, 2)
+    my_values = (2, 2)
     addition_instance_1 = Addition.create(my_values)
     addition_instance_2 = Addition.create(Convert.args_to_tuple(3, 3))
     assert isinstance(addition_instance_1, Addition), "Is not a Addition Instance"

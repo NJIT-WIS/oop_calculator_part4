@@ -7,11 +7,11 @@ class Calculation(list):
     """My abstract Base Calculation Class"""
 
     @classmethod
-    def create(cls, my_values: tuple):
+    def create(cls, my_values):
         """Factory Method"""
         return cls(my_values)
 
-    def __init__(self, my_values: tuple):
+    def __init__(self, my_values):
         """This is the base class constructor"""
 
         super().__init__()
