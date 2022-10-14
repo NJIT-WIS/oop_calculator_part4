@@ -2,11 +2,12 @@
 
 ## Introduction
 
-In this unitm you will learn about exceptions, working with list data, and iterators. You need to make your program
-accept a tuple for the calculation class constructor or a single value. You need to make two new calculation type for
-square and another one for square root. You need to add a custom exception that gets raised if only one value is found
-for calculations that require at least 2 values and you must implement a try except in the calculation constructor to
-handle properly if a tuple or a single value is passed into the create factory method.
+In this unit, you will learn about exceptions, working with list data, and iterators. You need to make your program
+accept a tuple for the calculation class constructor or a single value for the square / square root calculation types. 
+You need to make two new calculation types for square and another one for square root. You need to add a custom exception
+that gets raised if only one value is found for calculations that require at least 2 values, and you must implement a try 
+except in the calculation constructor to handle properly if a tuple or a single value is passed into the create factory 
+method.
 
 ### Assignment Requirements
 
