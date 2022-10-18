@@ -15,6 +15,3 @@ def test_calculator_operations():
     assert Calculator.history.get_last_result() == 8.0, "Multiplication Didn't work"
     Calculator.subtract(my_values)
     assert Calculator.history.get_last_result() == -2.0, "Multiplication Didn't work"
-
-
-
