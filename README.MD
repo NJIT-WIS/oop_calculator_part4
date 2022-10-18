@@ -11,8 +11,8 @@ method.
 
 ### Assignment Requirements
 
-Instructor Video - Part 1 [Watch Here](https://youtu.be/W3vSEZ9IT8E)
-Instructor Video - Part 2 [Watch Here](https://youtu.be/8C5Q5zCCSLw)
+* Instructor Video - Part 1 [Watch Here](https://youtu.be/W3vSEZ9IT8E)
+* Instructor Video - Part 2 [Watch Here](https://youtu.be/8C5Q5zCCSLw)
 
 ### Module Readings:
 
