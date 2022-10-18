@@ -1,6 +1,4 @@
 """This is the calculation class """
-from pprint import pprint
-
 import pytest
 
 from app.calculations import Addition, Subtraction, Multiplication, Division, Square, SquareRoot
@@ -45,6 +43,7 @@ def test_multiplication_calculation():
 
 def test_division_calculation():
     """Divide Two Numbers"""
+    # pylint: disable=expression-not-assigned
     # notice that each instance is independent of each other
     my_tuple = (2, 2)
     division_instance_1 = Division.create(my_tuple)
@@ -63,25 +62,27 @@ def test_square_calculation():
     """Divide Two Numbers"""
     # notice that each instance is independent of each other
     my_float = 2.0
-    square_instance_1 = Square.create(my_float)
-    assert square_instance_1.get_result() == 4
+    division_instance_1 = Square.create(my_float)
+    assert division_instance_1.get_result() == 4
 
 
 def test_square_root_calculation():
     """Divide Two Numbers"""
     # notice that each instance is independent of each other
     my_float = 4.0
-    square_root_instance_1 = SquareRoot.create(my_float)
-    assert square_root_instance_1.get_result() == 2
+    division_instance_1 = SquareRoot.create(my_float)
+    assert division_instance_1.get_result() == 2
 
 
 def test_only_one_value_exception():
+    """Checking Exception"""
+    # pylint: disable=expression-not-assigned
     my_value = 1
     with pytest.raises(OnlyOneValue):
         Subtraction.create(my_value).get_result() == 2
+    with pytest.raises(OnlyOneValue):
         Multiplication.create(my_value).get_result() == 2
+    with pytest.raises(OnlyOneValue):
         Division.create(my_value).get_result() == 2
-        Subtraction.create(my_value).get_result() == 2
-
-
-
+    with pytest.raises(OnlyOneValue):
+        Addition.create(my_value).get_result() == 2
