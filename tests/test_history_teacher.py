@@ -1,6 +1,4 @@
 """Do not change these tests, they are meant to check your code and should fail"""
-from pprint import pprint
-
 from app.calculations import Addition, Multiplication
 from app.history import CalculationHistoryList as History
 
